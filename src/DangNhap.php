@@ -132,7 +132,7 @@ mysqli_close(Connect());
         </div>
 
 
-        <!-- <div class="Loing_MXH">
+        <div class="Loing_MXH">
             <div class="Loing_MXH Facebook">
                 <img src="Image\DangNhap\fac.png" alt="">
                 <a href="#">Facebook</a>
@@ -147,7 +147,7 @@ mysqli_close(Connect());
         <div id="Register">
             <h4>Bạn mới biết đến Wibugangz?</h4>
             <a href="./dangky.php">Đăng Ký</a>
-        </div> -->
+        </div>
     </div>
 
     <script>
@@ -158,12 +158,12 @@ mysqli_close(Connect());
             distance: '150px',
         });
 
-        // ScrollReveal().reveal('.Container_Login',{delay: 200, origin: 'top'});
-        // ScrollReveal().reveal('.Container_Login h1',{delay: 300, origin: 'left'});
-        // ScrollReveal().reveal('.Main_Input',{delay: 300, origin: 'left'});
-        // ScrollReveal().reveal('.remember',{delay: 200, origin: 'left'});
-        // ScrollReveal().reveal('.forgot',{delay: 200, origin: 'left'});
-        // ScrollReveal().reveal('.btLogin',{delay: 200, origin: 'left'});
+        ScrollReveal().reveal('.Container_Login',{delay: 200, origin: 'top'});
+        ScrollReveal().reveal('.Container_Login h1',{delay: 300, origin: 'left'});
+        ScrollReveal().reveal('.Main_Input',{delay: 300, origin: 'left'});
+        ScrollReveal().reveal('.remember',{delay: 200, origin: 'left'});
+        ScrollReveal().reveal('.forgot',{delay: 200, origin: 'left'});
+        ScrollReveal().reveal('.btLogin',{delay: 200, origin: 'left'});
     </script>
 </body>
 
