@@ -19,17 +19,7 @@
 
         $total = ( $row['giaSP'] - $row['giaGiam']) * $AMOUT;
 
-        //thêm thông tin đơn hàng
-        $query = "INSERT INTO `donhang`(`IDSanPham`, `IDKhachHang`, `soLuongDat`, `size`,`ThoiGianDH`,`trangThai`,`nhanHang`,`tongTien`) 
-                  VALUES ('".$IDSP."','".$IDKH."','".$AMOUT."','".$SIZE."','".$now->format('Y-m-d H:i:s')."' , 'Đang Duyệt','Chưa Nhận' , '".$total."')";
-    
-        mysqli_query($connect,$query);
-    
-        //cập nhật số lượng sản phẩm
-        $updateSP = "UPDATE sanpham set soLuong = soLuong - '".$AMOUT."' WHERE ID = '".$IDSP."'";
-        mysqli_query($connect,$updateSP);
-
-        header("location: /DonMua.php");
+     
     }
     else
     {
