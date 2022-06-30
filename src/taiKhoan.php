@@ -7,7 +7,7 @@ require 'PHP/function.php';
 
 
 
-
+//thông tin thay đổi
 $SDT = isset($_POST["SDT"]) ? $_POST["SDT"] : null;
 $username = isset($_POST["username"]) ? $_POST["username"] : null;
 $address = isset($_POST["address"]) ? $_POST["address"] : null;
@@ -18,9 +18,11 @@ $ngaySinh = isset($_POST['birthday']) ? $_POST['birthday'] : null;
 $gioiTinh = isset($_POST['gender']) ? $_POST['gender'] : null;
 
 
+//mật khẩu thay đổi
 $newPass = isset($_POST['new_password']) ? $_POST['new_password'] : null;
 $confirmPass = isset($_POST['new_password_cf']) ? $_POST['new_password_cf'] : null;
 
+//nhấn lưu thông tin
 if (isset($_POST["btn_edit"])) {
     require('Config.php');
 
@@ -34,6 +36,7 @@ if (isset($_POST["btn_edit"])) {
             $updateKH = "UPDATE `khachhang` SET `hoTen` = '" . $username . "' , `email` = '" . $email . "' , `diaChi` = '" . $address . "' , `gioiTinh` = '" . $gioiTinh . "' , ngaySinh = '" . $ngaySinh . "' , SDT = '" . $SDT . "' WHERE `khachhang`.`tenDangNhap` = '" . $tenDangNhap . "'";
             mysqli_query(connect(), $updateKH);
 
+            //Cập nhật lại thông tin hiển thị
             $_SESSION['hoTen'] = $username;
             $_SESSION['email'] = $email;
             $_SESSION['diachi'] = $address;
@@ -64,10 +67,12 @@ if (isset($_POST['submit_img'])) {
             } else if (file_exists($file)) {
                 $error["file"] = "File này đã tồn tại";
             }
+            //nếu chưa có folder tạo folder
             if(!file_exists($dir))
                 mkdir($dir);
 
 
+            //coppy file
             if (empty($error["file"])) {
                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $file)) {
                     $updateImg = "UPDATE `khachhang` SET `avatar` = '" . $file . "' WHERE `khachhang`.`tenDangNhap` = '" . $tenDangNhap . "'";
@@ -96,6 +101,7 @@ if (isset($_POST['submit_img'])) {
     }
 }
 
+//nhấn lưu mật khẩu
 if (isset($_POST["btn_editPassWord"])) {
     require('Config.php');
     $sql = "SELECT * FROM taikhoan where taikhoan.ID = '" . $IDKH . "'";
