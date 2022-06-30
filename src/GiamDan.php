@@ -7,6 +7,7 @@
     $IDLoai = isset($_SESSION['IDLoai']) ? $_SESSION['IDLoai'] : null;
     $brand = isset($_SESSION['brand']) ? $_SESSION['brand'] : null;
 
+
     if($brand != null)
     {
         $command = "SELECT * FROM `sanpham` WhERE brand = '".$brand."' ORDER BY giaSP DESC";
@@ -18,11 +19,16 @@
 	    else
             $command = "SELECT * FROM `sanpham` ORDER BY giaSP DESC";
     } 
-    
     //Giảm giá
     $querySuKien = "SELECT * FROM sukien WHERE IDTL = '".$IDLoai."'";
 
     $resultSuKien = mysqli_query(Connect(),$querySuKien);
+
+    if($rowSK = mysqli_fetch_array($resultSuKien))
+    {
+        global $tienGiam;
+        $tienGiam = $rowSK['tienGiam'];
+    }
 
     if($rowSK = mysqli_fetch_array($resultSuKien))
     {
@@ -38,7 +44,7 @@
         <meta charset="utf8"></meta>
         <title>Shop Áo</title>
         <link rel="stylesheet" href="css/SanPham.css">
-        <link rel="stylesheet" href="css/responsive.css">
+
         <script src="https://unpkg.com/scrollreveal"></script>
 
     </head>
