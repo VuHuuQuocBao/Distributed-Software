@@ -44,7 +44,7 @@
         <meta charset="utf8"></meta>
         <title>Shop Áo</title>
         <link rel="stylesheet" href="css/SanPham.css">
-        <link rel="stylesheet" href="css/responsive.css">
+
         <script src="https://unpkg.com/scrollreveal"></script>
 
     </head>
