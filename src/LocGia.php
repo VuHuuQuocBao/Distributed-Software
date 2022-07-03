@@ -118,6 +118,23 @@ if ($rowSK = mysqli_fetch_array($resultSuKien)) {
         <?php } ?>
     </div>
 
+
+    <script>
+        //event scroll animation
+        ScrollReveal({
+            reset: true, //reset animation
+            distance: '150px', //khoảng cách animation
+            duration: 500, //thời gian chạy
+            delay: 25 //delay
+        });
+
+        //set aniamtion cho thẻ
+        ScrollReveal().reveal('.SubProduct', {
+            delay: 10,
+            origin: 'top',
+            interval: 50
+        });
+    </script>
 </body>
 
 </html>
