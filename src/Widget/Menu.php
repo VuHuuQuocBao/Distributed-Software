@@ -241,7 +241,128 @@ mysqli_close(connect());
         </div>
     </div>
 
+    <!-- Script thành header -->
+    <script>
+        //lấy vị trí scroll window
+        window.addEventListener("scroll", function(event) {
 
+            //vị trí theo chiều dọc
+            var scroll_y = this.scrollY;
+
+            //nếu scroll hơn 100 thì ẩn header tìm kiếm ngược lại hiển thị
+            if (scroll_y > 50) {
+                document.getElementById('HeaderSearch').style.display = "none";
+
+                Create_Menu();
+                document.getElementById('Contain_NewInfor').style.display = "flex";
+                document.getElementById('Header_Logo').style.display = "block";
+            } else {
+                document.getElementById('HeaderSearch').style.display = "flex";
+                document.getElementById('header').style.display = "flex";
+                document.getElementById('Contain_NewInfor').style.display = "none";
+                document.getElementById('Header_Logo').style.display = "none";
+            }
+        });
+
+        //tạo bảng tìm kiếm
+        function createSearch() {
+            document.getElementById('SearchContain').innerHTML = `
+                                                <div id="MainSearch" class="MainSearch">
+                                                    <div class="SearchItem">
+                                                    <img src="/Image/Icon/close.png" onclick="closeSearch();" alt="">
+
+                                                        <h1>Tìm Kiếm </h1>
+
+                                                        <div id="menu-search">
+                                                                <form action="TimKiem.php?page=Sản Phẩm&TheLoai=Tìm Kiếm" method="POST">
+                                                                    <div id="Contain_SearchProc">
+                                                                        <input type="text" value="" name="tenSPTK" id="IDTimKiem" placeholder="Tìm Kiếm">
+                                                                        <input type="submit" class="btTimKiem" value="">
+                                                                    </div>
+                                                                </form>
+                                                        </div>
+                                                    </div>
+                                                </div>`
+
+            // console.log("Tao thanh cong");
+        }
+
+        //đóng bản tìm kiếm 
+        function closeSearch() {
+            document.getElementById('MainSearch').style.display = "none";
+        }
+
+
+        //tạo menu mới
+        function Create_Menu() {
+            var checkDiv = document.getElementById('Contain_NewInfor');
+
+            if (checkDiv === null) {
+                document.getElementById('container').innerHTML = `
+                        <div id="containLogo">
+                            <img id="Header_Logo" style="margin: auto 20px;" class="Header_Logo" src="/Image/Menu/Logo.ico" alt="">
+                        </div>
+
+                        <div id="Mobile-menu-btn" onclick="slide_DownMenu();">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        `
+
+                    +
+                    document.getElementById('container').innerHTML +
+
+                    `<div id="Contain_NewInfor">
+                            <div class="Contain_HistoryCart">                  
+                                <ul id="main-menu">
+                                <?php
+                                if (isset($_SESSION['Logined'])) { ?>
+                                <div id="DivInfor">
+                                    <li id="menu-Infor">
+                                        <a>
+                                            <img src="<?php if (isset($_SESSION['image'])) echo $_SESSION['image'] ?>" alt="">
+                                            <?php if (isset($_SESSION['hoTen'])) echo $_SESSION['hoTen'] ?></a>    
+                                        <ul class="sub-menu_Infor">
+                                            <li><a href="/taiKhoan.php">Tài Khoản</a></li>
+                                            <li><a href="/DonMua.php">Đơn Mua</a></li>
+                                            <li><a href="/PHP/Xulydangxuat.php">Đăng Xuất</a></li>                      
+                                        </ul>
+                                    </li>
+                                </div> 
+                                <?php } else { ?>
+                                <div id="DivDangNhap">
+                                <li class="menu-DangNhap">
+                                    <a href="/DangNhap.php" name="btDangNhap">
+                                        <img src="/Image/Menu/account.png" alt="">
+                                    </a></li>                
+                                <?php } ?>
+                                </ul>                      
+                        </div>
+
+                        <img src="/Image/Menu/Find.png" onclick="createSearch();" class="btTimkiemNew" value="">
+
+                        
+                        </div>`;
+
+                function Page_Cart() {
+                    window.location.href = "GioHang.php";
+                }
+            }
+        }
+
+        //Click menu mobile
+        function slide_DownMenu() {
+            var menu = document.getElementById('Mobile-menu-btn');
+            var header = document.getElementById('header');
+            var subProduct = document.getElementById('Title_SubMenu');
+
+            subProduct.style.marginRight = '0';
+
+            if (header.style.height == 'auto')
+                header.style.height = '43px';
+            else
+                header.style.height = 'auto';
+        }
+    </script>
 </body>
 
 </html>
