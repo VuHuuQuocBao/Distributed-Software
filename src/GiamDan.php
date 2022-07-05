@@ -5,36 +5,38 @@
 ?>
 <?php	
     $IDLoai = isset($_SESSION['IDLoai']) ? $_SESSION['IDLoai'] : null;
-    $IDMau = isset($_GET['IDMau']) ? $_GET['IDMau'] : null;
     $brand = isset($_SESSION['brand']) ? $_SESSION['brand'] : null;
 
-    //brand != null thì load giá brand
+
     if($brand != null)
     {
-        $command = "SELECT * FROM `sanpham` WhERE brand = '".$brand."' and IDMau = '".$IDMau."'";
+        $command = "SELECT * FROM `sanpham` WhERE brand = '".$brand."' ORDER BY giaSP DESC";
     }
     else
     {
         if($IDLoai != -1)
-	        $command = "SELECT * FROM `sanpham` WhERE IDLoai = '".$IDLoai."' and IDMau = '".$IDMau."'";
-        else                                                
-            $command = "SELECT * FROM `sanpham` WhERE IDMau = '".$IDMau."'";
-
-    }
-
-	$result = mysqli_query(Connect(),$command);
-    $checkCount = mysqli_num_rows($result);
-
+	        $command = "SELECT * FROM `sanpham` WhERE IDLoai = '".$IDLoai."' ORDER BY giaSP DESC";
+	    else
+            $command = "SELECT * FROM `sanpham` ORDER BY giaSP DESC";
+    } 
     //Giảm giá
     $querySuKien = "SELECT * FROM sukien WHERE IDTL = '".$IDLoai."'";
 
     $resultSuKien = mysqli_query(Connect(),$querySuKien);
-     
+
     if($rowSK = mysqli_fetch_array($resultSuKien))
     {
         global $tienGiam;
         $tienGiam = $rowSK['tienGiam'];
     }
+
+    if($rowSK = mysqli_fetch_array($resultSuKien))
+    {
+        global $tienGiam;
+        $tienGiam = $rowSK['tienGiam'];
+    }
+
+	$result = mysqli_query(Connect(),$command);
 ?>
 
 <html>
@@ -42,20 +44,13 @@
         <meta charset="utf8"></meta>
         <title>Shop Áo</title>
         <link rel="stylesheet" href="css/SanPham.css">
-        <link rel="stylesheet" href="css/responsive.css">
+
         <script src="https://unpkg.com/scrollreveal"></script>
 
     </head>
 
     <body>
         <div class="Main-Product" >
-            <?php
-                if($checkCount == 0)
-                {?>
-                    <h2 style="text-align: center; margin: 180px 0;" id="Result">Không tìm thấy kết quả nào</h2>                 
-
-            <?php }?>
-
             <?php
                 while($row = mysqli_fetch_array($result))
                 {?>
@@ -96,7 +91,7 @@
                                 <?php }?>
 
                                 <p><?php echo format_money($row['giaSP'] - $row['giaGiam'],0,'','.')?>
-                        </div>       
+                            </div>       
                         
                     <?php }
                     else
@@ -104,7 +99,7 @@
                         if(isset($tienGiam))
                         {?>
                             <span class="Discount"><?php  echo $tienGiam?>%</span>
-                    <?php } ?>
+                    <?php  } ?>
 
                         <a href="PHP/Xulychitietsanpham.php?page=danhsach&id=<?php echo $row['ID']; ?>&IDLoai=<?php echo $row['IDLoai']; ?>" id="buyProduct">
                             <img type="image" id="ImgShirt" src="<?php echo $row['imageSP']?>">
@@ -117,6 +112,7 @@
                       <?php }?>
                         
                         <p><?php echo $row['tenSP']?>
+                        
                         <div style="display:flex; width:100%; justify-content:center">
                                 <?php
                                     if($row['giaGiam'] > 0)
@@ -131,7 +127,6 @@
             <?php }?>
         </div>
 
-        
         <script>
             //event scroll animation
             ScrollReveal({ 
