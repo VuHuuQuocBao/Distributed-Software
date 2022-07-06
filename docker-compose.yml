@@ -15,7 +15,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: quocbao
+      MYSQL_ROOT_PASSWORD: example
     volumes:
       - mysql-data:/var/lib/mysql
 
