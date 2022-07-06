@@ -165,7 +165,16 @@ require('Widget/scroll.php');
             duaration: 1600,
             delay: 25,
         });
-
+        
+        ScrollReveal().reveal('.Nav__Staff--Contact',{delay: 200, origin: 'left'});
+        ScrollReveal().reveal('.Contain_Contact__Right p', {delay: 1, origin: 'left', interval: 50});
+        ScrollReveal().reveal('.Contain_Contact__Right span', {delay: 5, origin: 'top', interval: 50});
+        ScrollReveal().reveal('.Contain_Contact__Left input, textarea', {delay: 5, origin: 'left', interval: 50});
+        ScrollReveal().reveal('.Nav__StaffContain__div_1', {delay: 200, origin: 'left'});
+        ScrollReveal().reveal('.Nav__StaffContain__div_2', {delay: 200, origin: 'top'});
+        ScrollReveal().reveal('.Nav__StaffContain__div_3', {delay: 200, origin: 'right'});
+        ScrollReveal().reveal('.Nav__StaffContain__div_4', {delay: 200, origin: 'left'});
+        ScrollReveal().reveal('.Nav__StaffContain__div_5', {delay: 200, origin: 'right'});
      
 
     </script>
