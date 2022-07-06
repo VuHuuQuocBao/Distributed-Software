@@ -73,49 +73,7 @@ require('Widget/scroll.php');
 
                         <input type="Submit" name="sendEmail" class="Contain_Contact__Left__Submit" value="Gửi">
                     </form>
-                </div>
-
-                <div class="Contain_Contact__Right">
-                    <p style="padding-right: 120px;">Wibugang Shop là nơi mua sắm các sản phẩm Quần áo nữ - Váy - Đầm</p> <br> 
-                    <p> uy tín và chất lượng kiểu dáng đẹp, hợp thời trang </p><br> 
-                    <p> đồng hành cùng cung cách phục vụ chuyên nghiệp nhất.</p><br>
-                    <p> Nếu bạn là một tín đồ thời trang và luôn muốn “săn lùng”</p> <br>
-                    <p> những mặt hàng thời trang mới nhất, hợp thời trang nhất, </p><br>
-                    <p> đẹp nhất, giá cả phù hợp nhất, đồng thời trải nghiệm dịch vụ tốt nhất,</p><br>
-                    <p> hãy để Wibugang đồng hành cùng bạn!</p>
-                        <br>
-                        ------------------------------------------------------------
-                        <br>
-
-                        <span>
-                            <i class="fa-solid fa-location-dot"></i>
-                            97 Sông Nhuệ, Đức Thắng, Bắc Từ Liêm, Hà Nội
-                            <br>
-                            <br>
-                        </span>
-
-                        <span>
-                            <i class="fa-solid fa-phone"></i>
-                            0862880810
-                            <br>
-                            <br>
-                        </span>
-
-                        <span>
-                            <i class="fa-solid fa-envelope"></i>
-                            <a href="">webshopdocker@gmail.com</a>
-                            <br>
-                            <br>
-                        </span>
-
-                        <span>
-                            <i class="fa-solid fa-house"></i>
-                            <a href="">www.wibugangz.com</a>
-                            <br>
-                            <br>
-                        </span>
-
-                        <span>
+                
                             <i class="fa-brands fa-facebook"></i>
                             <a href="https://www.facebook.com/nhat.canh.1998/">facebook.com/nhat.canh.1998/</a>
                         </span>
