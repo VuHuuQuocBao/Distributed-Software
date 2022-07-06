@@ -2,6 +2,46 @@
 require "Widget/Menu.php";
 require('Widget/scroll.php');
 
+if (isset($_POST['sendEmail'])) {
+    require "PHPMailer-master/src/PHPMailer.php";
+    require "PHPMailer-master/src/SMTP.php";
+    require 'PHPMailer-master/src/Exception.php';
+
+    $tieuDe = isset($_POST['tieuDe']) ? $_POST['tieuDe'] : null;
+    $hoTen = isset($_POST['hoTen']) ? $_POST['hoTen'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $noiDung = isset($_POST['noidung']) ? $_POST['noidung'] : null;
+
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true); //true:xử lý lỗi nếu có
+
+    try {
+        $mail->SMTPDebug = 0; //0,1,2: chế độ debug. khi chạy ngon thì chỉnh lại 0 nhé
+        $mail->isSMTP();
+        $mail->CharSet  = "utf-8";
+        $mail->Host = 'smtp.gmail.com';  //địa chỉ mail sever gmail
+        $mail->SMTPAuth = true; // Enable authentication
+        $mail->Username = 'webshopdocker@gmail.com'; //TK email gửi
+        $mail->Password = 'lowksyomunwwykkr';   // pass email gửi
+        $mail->SMTPSecure = 'ssl';  // encryption SSL/Port = 465  TSL/Port = 587
+        $mail->Port = 465;  // port to connect to                
+        $mail->setFrom("webshopdocker@gmail.com", $hoTen); //địa chỉ email người gửi, và tên
+        $mail->addAddress('webshopdocker@gmail.com', 'Wibugangz'); //mail và tên người nhận  
+        $mail->isHTML(true);  // Set email format to HTML
+        $mail->Subject = $tieuDe; //tiêu đề thư
+        $mail->Body = "<b>Email: </b>".$email."<br><b>Nội dung: </b>".$noiDung; //nội dung thư
+        $mail->smtpConnect(array(
+            "ssl" => array(
+                "verify_peer" => false,
+                "verify_peer_name" => false,
+                "allow_self_signed" => true
+            )
+        ));
+        $mail->send(); //gủi mail
+    } catch (Exception $e) {
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
