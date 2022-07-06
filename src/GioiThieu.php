@@ -88,14 +88,7 @@ require('Widget/scroll.php');
                         Cách 1: Thanh toán trực tiếp (người mua nhận hàng tại địa chỉ người bán)<br>
                         Cách 2: Thanh toán sau (COD - giao hàng và thu tiền tận nơi)<br></p>
                 </div>
-            </div>
-            <div class="col d-f">
-                <i class="fa-solid fa-user-shield icon-introduct"></i>
-                <div class="info">
-                    <h3>Hàng chính hãng</h3>
-                    <p>Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng mang dấu ấn lịch sử của cửa hàng chúng tôi và đang không ngừng phát triển lớn mạnh<br>
-                </div>
-            </div>
+            
         </div>
     </section>
 
