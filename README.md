@@ -9,7 +9,7 @@ Includes :
 # How to setup
 1. Clone Source code
 ```cmd
-    git clone https://github.com/nhatthichcodee/shop-web-docker.git
+    git clone https://github.com/VuHuuQuocBao/Distributed-Software
 ```
 2. Run Docker
 ```cmd
