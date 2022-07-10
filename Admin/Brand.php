@@ -16,6 +16,18 @@
 
 	$result = mysqli_query(Connect(),$command);
     $checkCount = mysqli_num_rows($result);
+    
+    for($i=0;$i<$soTrang;$i++)
+    {
+        if($page==$i)
+        {
+        $listPage.='<a class="active" href=quantri.php?page_layout=danhsachLichSu&page='.$i.'>'.$i.'</a>';
+        }
+        else
+        {
+        $listPage.='<a href=quantri.php?page_layout=danhsachLichSu&page='.$i.'>'.$i.'</a>';
+        }
+    }
 
     mysqli_close(connect());
 ?>
