@@ -19,11 +19,11 @@
                 $mail->CharSet  = "utf-8";
                 $mail->Host = 'smtp.gmail.com';  //địa chỉ mail sever gmail
                 $mail->SMTPAuth = true; // Enable authentication
-                $mail->Username = 'webshopdocker@gmail.com'; //TK email gửi
-                $mail->Password = 'lowksyomunwwykkr';   // pass email gửi
+                $mail->Username = 'dockerwebshop@gmail.com'; //TK email gửi
+                $mail->Password = 'ipvjvcxsznalwxxy';   // pass email gửi
                 $mail->SMTPSecure = 'ssl';  // encryption SSL/Port = 465  TSL/Port = 587
                 $mail->Port = 465;  // port to connect to                
-                $mail->setFrom('webshopdocker@gmail.com', 'Wibugangz' ); //địa chỉ email người gửi
+                $mail->setFrom('dockerwebshop@gmail.com', 'Wibugangz' ); //địa chỉ email người gửi
                 $mail->addAddress($email, $hoTen); //mail và tên người nhận  
                 $mail->isHTML(true);  // Set email format to HTML
                 $mail->Subject = "Thông báo Đăng ký nhận tin từ Wibugangz"; //tiêu đề thư
