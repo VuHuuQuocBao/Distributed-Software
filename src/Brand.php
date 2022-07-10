@@ -23,6 +23,7 @@
         <meta charset="utf8"></meta>
         <title>Shop Áo</title>
         <link rel="stylesheet" href="css/SanPham.css">
+        <link rel="stylesheet" href="css/responsive.css">
 
     </head>
 
@@ -51,13 +52,13 @@
                             <span class="Discount">-<?php if(isset($rowSK['tienGiam']))  echo $rowSK['tienGiam']?>%</span>
 
                     <?php }
-                } ?>
+                    } ?>
                         
                         <?php
                             if($row['soLuong'] == 0)
                             { ?>
                                 <span id="Sold_Out">Cháy hàng</span>
-                        <?php }?>
+                      <?php }?>
 
                         <a href="PHP/Xulychitietsanpham.php?page=danhsach&brand=<?php echo $row['brand']; ?>&id=<?php echo $row['ID']; ?>&IDLoai=<?php echo $row['IDLoai']; ?>" id="buyProduct">
                             <img type="image" id="ImgShirt" src="<?php echo $row['imageSP']?>"></a>
