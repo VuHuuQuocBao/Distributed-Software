@@ -21,12 +21,12 @@ if (isset($_POST['sendEmail'])) {
         $mail->CharSet  = "utf-8";
         $mail->Host = 'smtp.gmail.com';  //địa chỉ mail sever gmail
         $mail->SMTPAuth = true; // Enable authentication
-        $mail->Username = 'webshopdocker@gmail.com'; //TK email gửi
-        $mail->Password = 'lowksyomunwwykkr';   // pass email gửi
+        $mail->Username = 'dockerwebshop@gmail.com'; //TK email gửi
+        $mail->Password = 'ipvjvcxsznalwxxy';   // pass email gửi
         $mail->SMTPSecure = 'ssl';  // encryption SSL/Port = 465  TSL/Port = 587
         $mail->Port = 465;  // port to connect to                
-        $mail->setFrom("webshopdocker@gmail.com", $hoTen); //địa chỉ email người gửi, và tên
-        $mail->addAddress('webshopdocker@gmail.com', 'Wibugangz'); //mail và tên người nhận  
+        $mail->setFrom("dockerwebshop@gmail.com", $hoTen); //địa chỉ email người gửi, và tên
+        $mail->addAddress('dockerwebshop@gmail.com', 'Wibugangz'); //mail và tên người nhận  
         $mail->isHTML(true);  // Set email format to HTML
         $mail->Subject = $tieuDe; //tiêu đề thư
         $mail->Body = "<b>Email: </b>".$email."<br><b>Nội dung: </b>".$noiDung; //nội dung thư
