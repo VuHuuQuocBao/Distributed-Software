@@ -114,7 +114,17 @@
                                 <span id="Sold_Out">Cháy hàng</span>
                       <?php }?>
                         
-                                    <?php  } ?>
+                        <p><?php echo $row['tenSP']?>
+                        <div style="display:flex; width:100%; justify-content:center">
+                                <?php
+                                    if($row['giaGiam'] > 0)
+                                    {?>
+                                        <p style="text-decoration:line-through; color:gray; font-weight:500; font-size: 15px; margin: auto 10px"><?php echo format_money($row['giaSP'],0,'','.')?></p>
+                                <?php }?>
+
+                                <p><?php echo format_money($row['giaSP'] - $row['giaGiam'],0,'','.')?>
+                        </div>       
+                <?php  } ?>
                 </div>
             <?php }?>
         </div>
