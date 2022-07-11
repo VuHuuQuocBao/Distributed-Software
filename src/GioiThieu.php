@@ -19,7 +19,7 @@ require('Widget/scroll.php');
 
 <body>
     <div class="banner">
-        <h1>GIỚI THIỆU</h1>
+        <h1>GIỚI THIỆU về Cửa Hàng</h1>
         <div class="banner-page">
             <a href="TrangChu.php">Trang chủ /</a>
             <h3>GIỚI THIỆU</h3>
@@ -83,11 +83,7 @@ require('Widget/scroll.php');
             <div class="col d-f">
                 <i class="fa-solid fa-money-bill-1 icon-introduct"></i>
                 <div class="info">
-                    <h3>Thanh Toán An Toàn Và Tiện lợi</h3>
-                    <p>Người mua có thể tham khảo các phương thức thanh toán sau đây và lựa chọn áp dụng phương thức phù hợp:<br>
-                        Cách 1: Thanh toán trực tiếp (người mua nhận hàng tại địa chỉ người bán)<br>
-                        Cách 2: Thanh toán sau (COD - giao hàng và thu tiền tận nơi)<br></p>
-                </div>
+
             
         </div>
     </section>
