@@ -45,6 +45,49 @@
         }
     }
 
+    $ID = $IDSP = $IDSize = $hoTen = $soLuongSP = $ngaySinh = $SDT = $email = $diaChi = $avatar = '';
+    if (!empty($_POST)) {
+        if (isset($_POST['ID'])) {
+            $ID = $_POST['ID'];
+        }
+        if (isset($_POST['tenDangNhap'])) {
+            $tenDangNhap = $_POST['tenDangNhap'];
+        }
+        if (isset($_POST['matKhau'])) {
+            $matKhau = $_POST['matKhau'];
+        }
+        if (isset($_POST['hoTen'])) {
+            $hoTen = $_POST['hoTen'];
+        }
+        if (isset($_POST['gioiTinh'])) {
+            $gioiTinh = $_POST['gioiTinh'];
+        }
+        if (isset($_POST['ngaySinh'])) {
+            $ngaySinh = $_POST['ngaySinh'];
+        }
+        if (isset($_POST['SDT'])) {
+            $SDT = $_POST['SDT'];
+        }
+        if (isset($_POST['email'])) {
+            $email = $_POST['email'];
+        }
+        if (isset($_POST['diaChi'])) {
+            $diaChi = $_POST['diaChi'];
+        }
+        if (isset($_POST['avatar'])) {
+            $avatar = $_POST['avatar'];
+        }
+        // chọn bảng mã cho kết nối
+        mysqli_query(connect(), "set names 'utf8'");
+        // thực hiện lệnh truy vấn
+        $istk = 'INSERT INTO taikhoan(ID, tenDangNhap,matKhau) VALUES ("' . $ID . '","' . $tenDangNhap . '","' . $matKhau . '")';
+        $result1 = mysqli_query(connect(), $istk);
+        $iskh = 'INSERT INTO khachhang(ID,tenDangNhap, hoTen, gioiTinh, ngaySinh, SDT, email, diaChi, avatar)
+        VALUES ("' . $ID . '","' . $tenDangNhap . '","' . $hoTen . '","' . $gioiTinh . '","' . $ngaySinh . '","' . $SDT . '","' . $email . '","' . $diaChi . '","' . $file . '")';
+        mysqli_query(connect(), $iskh);
+        header("Location:quantri.php?page_layout=danhsachKH");
+        mysqli_close(connect());
+    }
 mysqli_close(connect());
 ?>
 <?php if(isset($_SESSION["admin"])) { ?>
