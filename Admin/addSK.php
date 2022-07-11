@@ -87,6 +87,31 @@ if (!empty($_POST)) {
         echo '<script>window.location="quantri.php?page_layout=danhsachSuKien"</script>';
     }
     mysqli_close(connect());
+    
+    $ID = $tenMau = '';
+    if (!empty($_POST)) {
+        if (isset($_GET['ID'])) {
+            $ID = $_GET['ID'];
+        }
+        if (isset($_POST['tenMau'])) {
+            $tenMau = $_POST['tenMau'];
+        }
+    // thực hiện lệnh truy vấn
+    $sql = 'INSERT INTO mausac(tenMau) 
+    VALUES ("'.$tenMau.'")';
+    mysqli_query(connect(),$sql);
+
+
+    if(!headers_sent())
+    {
+        header("Location: quantri.php?page_layout=danhsachMau");
+    }
+    else
+    {
+        echo '<script>window.location="quantri.php?page_layout=danhsachMau"</script>';
+    }
+    mysqli_close(connect());
+    }
 }
 ?>
 <!DOCTYPE html>
