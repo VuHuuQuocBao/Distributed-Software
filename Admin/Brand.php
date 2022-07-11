@@ -28,6 +28,26 @@
         $listPage.='<a href=quantri.php?page_layout=danhsachLichSu&page='.$i.'>'.$i.'</a>';
         }
     }
+    
+//Tổng số dòng
+$querySoDong= "SELECT * FROM khohang";
+$resultRow= mysqli_query(connect(),$querySoDong);
+$soDong = mysqli_num_rows($resultRow);
+//số trang
+$soTrang = $soDong / $baiTrenMotTrang;
+
+$listPage="";
+for($i=0;$i<$soTrang;$i++)
+{
+    if($page==$i)
+    {
+    $listPage.='<a class="active" href=quantri.php?page_layout=danhsachKhoHang&page='.$i.'>'.$i.'</a>';
+    }
+    else
+    {
+    $listPage.='<a href=quantri.php?page_layout=danhsachKhoHang&page='.$i.'>'.$i.'</a>';
+    }
+}
 
     mysqli_close(connect());
 ?>
