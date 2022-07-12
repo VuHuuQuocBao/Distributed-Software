@@ -119,6 +119,19 @@ require('Widget/scroll.php');
         ScrollReveal().reveal('.info p',{delay: 400, origin: 'left'});
         ScrollReveal().reveal('.row i',{delay: 200, origin: 'top'});
 
+        if($brand != null)
+    {
+        $command = "SELECT * FROM `sanpham` WhERE brand = '".$brand."' ORDER BY giaSP DESC";
+    }
+    else
+    {
+        if($IDLoai != -1)
+	        $command = "SELECT * FROM `sanpham` WhERE IDLoai = '".$IDLoai."' ORDER BY giaSP DESC";
+	    else
+            $command = "SELECT * FROM `sanpham` ORDER BY giaSP DESC";
+    } 
+    
+    
     </script>
 </body>
 </html>
