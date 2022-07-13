@@ -25,6 +25,8 @@
 
     //Giảm giá
     $querySuKien = "SELECT * FROM sukien WHERE IDTL = '".$IDLoai."'";
+
+    $resultSuKien = mysqli_query(connect(),$querySuKien);
      
     if($rowSK = mysqli_fetch_array($resultSuKien))
     {
@@ -60,7 +62,11 @@
                         //nếu IDLoai == -1 là trang tất cả sản phẩm
                         if($IDLoai == -1)
                         {
+                            //truy vấn sự kiện
+                            $querySuKien = "SELECT * FROM sukien";
 
+                            $resultSuKien = mysqli_query(connect(),$querySuKien);
+                        
                             while($rowSK = mysqli_fetch_array($resultSuKien))
                             {
                                 //nếu IDTL bên sự kiện == IDLoai của sản phẩm thì tạo thẻ giảm giá
