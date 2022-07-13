@@ -239,6 +239,52 @@ if (isset($_POST['sendEmail'])) {
             </div>
         </div>
     </div>
+    
+    <section class="section-content flex-wr d-f">
+        <div class="row d-f">
+            <div class="col d-f">
+                <i class="fa-solid fa-clock-rotate-left  icon-introduct"></i>
+                <div class="info">
+                    <h3>Đổi trả với điều kiện</h3>
+                    <p><b>Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời điểm giao/nhận hàng trong những trường hợp sau:</b><br>
+                        Hàng không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại thời điểm đặt hàng<br>
+                        Không đủ số lượng, không đủ bộ như trong đơn hàng<br>
+                        Tình trạng bên ngoài bị ảnh hưởng như rách bao bì, bong tróc, bể vỡ…<br>
+                        Khách hàng có trách nhiệm trình giấy tờ liên quan chứng minh sự thiếu sót trên để hoàn thành việc hoàn trả/đổi trả hàng hóa.<br></p>
+                </div>
+            </div>
+            <div class="col d-f">
+                <i class="fa-solid fa-money-bill-transfer  icon-introduct"></i>
+                <div class="info">
+                    <h3>Đổi trả trong vòng 7 ngày</h3>
+                    <p>Thời gian thông báo đổi : trong vòng 48h kể từ khi nhận sản phẩm đối với trường hợp sản phẩm bị bong tróc hình in , loang màu.<br>
+                        Thời gian gửi chuyển trả sản phẩm: trong vòng 7 ngày kể từ khi nhận sản phẩm.<br>
+                        Địa điểm đổi sản phẩm: Khách hàng có thể mang hàng trực tiếp đến văn phòng/ cửa hàng của chúng tôi<br>
+                        Khách hàng được đổi miễn phí sản phẩm trong vòng 30 ngày kể từ ngày nhận được sản phẩm nếu gặp các vẫn đề liên quan đến in ấn<br>
+                        Trong trường hợp Quý Khách hàng có ý kiến đóng góp/khiếu nại liên quan đến chất lượng sản phẩm,
+                        Quý Khách hàng vui lòng liên hệ đường dây chăm sóc khách hàng của chúng tôi.<br></p>
+                </div>
+            </div>
+        </div>
+        <div class="row d-f">
+            <div class="col d-f">
+                <i class="fa-solid fa-money-bill-1 icon-introduct"></i>
+                <div class="info">
+                    <h3>Thanh Toán An Toàn Và Tiện lợi</h3>
+                    <p>Người mua có thể tham khảo các phương thức thanh toán sau đây và lựa chọn áp dụng phương thức phù hợp:<br>
+                        Cách 1: Thanh toán trực tiếp (người mua nhận hàng tại địa chỉ người bán)<br>
+                        Cách 2: Thanh toán sau (COD - giao hàng và thu tiền tận nơi)<br></p>
+                </div>
+            </div>
+            <div class="col d-f">
+                <i class="fa-solid fa-user-shield icon-introduct"></i>
+                <div class="info">
+                    <h3>Hàng chính hãng</h3>
+                    <p>Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng mang dấu ấn lịch sử của cửa hàng chúng tôi và đang không ngừng phát triển lớn mạnh<br>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
         ScrollReveal(

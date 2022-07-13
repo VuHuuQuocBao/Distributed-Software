@@ -59,11 +59,11 @@
         if (isset($_POST['hoTen'])) {
             $hoTen = $_POST['hoTen'];
         }
+        if (isset($_POST['avatar'])) {
+            $avatar = $_POST['avatar'];
+        }
         if (isset($_POST['gioiTinh'])) {
             $gioiTinh = $_POST['gioiTinh'];
-        }
-        if (isset($_POST['ngaySinh'])) {
-            $ngaySinh = $_POST['ngaySinh'];
         }
         if (isset($_POST['SDT'])) {
             $SDT = $_POST['SDT'];
@@ -74,9 +74,7 @@
         if (isset($_POST['diaChi'])) {
             $diaChi = $_POST['diaChi'];
         }
-        if (isset($_POST['avatar'])) {
-            $avatar = $_POST['avatar'];
-        }
+
         // chọn bảng mã cho kết nối
         mysqli_query(connect(), "set names 'utf8'");
         // thực hiện lệnh truy vấn
@@ -99,8 +97,6 @@ mysqli_close(connect());
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="css/quanLy.css">
             <link rel="stylesheet" href="css/global.css">
-            <link rel="stylesheet" href="css/reset.css">
-            <link rel="stylesheet" href="css/styles.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <title>Chi Tiết Bình Luận</title>
         </head>
@@ -124,10 +120,10 @@ mysqli_close(connect());
                 <tr>
                 <td><?php echo $row['ID']?>
                 <td><?php echo $row['IDKH'] ?>
-                <td><?php echo $row['hoTen'] ?>
-                <td><?php echo $row['tenSP'] ?>
+                <td><?php echo $row['hoTenKH'] ?>
+                <td><?php echo $row['tenSanPham'] ?>
                 <td><?php echo $row['binhLuan'] ?>
-                <td><?php echo $row['ngayBinhLuan'] ?> 
+                <td><?php echo $row['ngayBinhLuansanPham'] ?> 
                 <td>
                 <a href="deleteBL.php?id=<?php echo $row['ID']?>">
                 <button class="btn btn-danger">
