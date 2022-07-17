@@ -41,18 +41,6 @@ $resultRow= mysqli_query(connect(),$querySoDong);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/quanLy.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Lịch Sử Mua Hàng</title>
 </head>
 
 <body>
@@ -97,6 +85,13 @@ $resultRow= mysqli_query(connect(),$querySoDong);
                 <?php
                     echo $listPage;
                 ?>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/quanLy.css">
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Lịch Sử Mua Hàng</title>
 </div>  
 </body>
 

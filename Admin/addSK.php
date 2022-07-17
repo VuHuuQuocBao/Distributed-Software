@@ -14,6 +14,39 @@ if(isset($_POST['file'])){
         $error["file"] = "File này đã tồn tại";
     }
 }
+//số bài trên một trang
+$baiTrenMotTrang = 5;
+
+$temp = $page*$baiTrenMotTrang;
+$command = "SELECT dg.ID, dg.IDKH, dg.IDSP, COUNT(dg.ngayBinhLuan), dg.binhLuan, dg.ngayBinhLuan from danhgiasanpham as dg
+Group By dg.ngayBinhLuan,dg.ID,dg.IDKH
+LIMIT $temp,$baiTrenMotTrang";
+
+$result = mysqli_query(connect(), $command);
+
+//  $querySoDong="select ID,IDKH, IDSP, COUNT(ngayBinhLuan), binhLuan, ngayBinhLuan from danhgiasanpham
+//  Group By ngayBinhLuan DESC";
+//  $resultRow= mysqli_query(connect(),$querySoDong);
+// mysqli_num_rows($resultRow);
+
+
+$soDong = mysqli_num_rows($result);
+//số trang
+$soTrang = $soDong / $baiTrenMotTrang;
+
+$listPage="";
+for($i=0;$i<$soTrang;$i++)
+{
+    if($page==$i)
+    {
+    $listPage.='<a class="active" href=quantri.php?page_layout=danhsachBinhLuan&page='.$i.'>'.$i.'</a>';
+    }
+    else
+    {
+    $listPage.='<a href=quantri.php?page_layout=danhsachBinhLuan&page='.$i.'>'.$i.'</a>';
+    }
+}
+
 $ID = $IDTL = $tienGiam = $ngayBatDau = $ngayKetThuc = '';
 if (!empty($_POST)) {
     if (isset($_POST['ID'])) {
@@ -54,6 +87,31 @@ if (!empty($_POST)) {
         echo '<script>window.location="quantri.php?page_layout=danhsachSuKien"</script>';
     }
     mysqli_close(connect());
+    
+    $ID = $tenMau = '';
+    if (!empty($_POST)) {
+        if (isset($_GET['ID'])) {
+            $ID = $_GET['ID'];
+        }
+        if (isset($_POST['tenMau'])) {
+            $tenMau = $_POST['tenMau'];
+        }
+    // thực hiện lệnh truy vấn
+    $sql = 'INSERT INTO mausac(tenMau) 
+    VALUES ("'.$tenMau.'")';
+    mysqli_query(connect(),$sql);
+
+
+    if(!headers_sent())
+    {
+        header("Location: quantri.php?page_layout=danhsachMau");
+    }
+    else
+    {
+        echo '<script>window.location="quantri.php?page_layout=danhsachMau"</script>';
+    }
+    mysqli_close(connect());
+    }
 }
 ?>
 <!DOCTYPE html>

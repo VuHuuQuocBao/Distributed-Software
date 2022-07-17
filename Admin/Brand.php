@@ -28,6 +28,26 @@
         $listPage.='<a href=quantri.php?page_layout=danhsachLichSu&page='.$i.'>'.$i.'</a>';
         }
     }
+    
+//Tổng số dòng
+$querySoDong= "SELECT * FROM khohang";
+$resultRow= mysqli_query(connect(),$querySoDong);
+$soDong = mysqli_num_rows($resultRow);
+//số trang
+$soTrang = $soDong / $baiTrenMotTrang;
+
+$listPage="";
+for($i=0;$i<$soTrang;$i++)
+{
+    if($page==$i)
+    {
+    $listPage.='<a class="active" href=quantri.php?page_layout=danhsachKhoHang&page='.$i.'>'.$i.'</a>';
+    }
+    else
+    {
+    $listPage.='<a href=quantri.php?page_layout=danhsachKhoHang&page='.$i.'>'.$i.'</a>';
+    }
+}
 
     mysqli_close(connect());
 ?>
@@ -90,6 +110,59 @@
                     </div>
                 <?php }?>
         </div>
+        <h1>Chi Tiết Ngày Mua</h1>
+    <table id="keywords">
+        <thead>
+            <tr>
+                <th><span>ID</span></th>
+                <th><span>IDKhachHang</span></th>
+                <th><span>Số Lượng</span></th>          
+                <th><span>Thời Gian Đặt</span></th>
+                <th><span>Trạng Thái</span></th>
+                <th><span>Chi Tiết</span></th>
+                <th><span>Duyệt đơn</span></th>
+                <th><span>Xác nhận đơn</span></th>
+            </tr>
+        </thead>
+        <?php
+                    $sum=0;
+            while ($row = mysqli_fetch_array($result)) {
+                /*$sum=$sum+$row['giaSP'];  => Tổng tiền cần trả của từng đơn hàng*/
+                ?>
+        <tr>
+            <td>
+                <?php echo $row['ID'] ?>
+            <td>
+                <?php echo $row['IDKhachHang'] ?>
+            <td>
+                <?php echo $row['sumSL'] ?>    
+            <td>
+                <?php echo $row['ThoiGianDH'] ?>
+            <td>
+                <?php echo $row['trangThai'] ?>
+            <td>
+                <a href="quantri.php?page_layout=detail_DH&chitietDH.php&id=<?php echo $row['IDKhachHang']?>&ThoiGianDH=<?php echo $row['ThoiGianDH']?>">
+                    <button class="btn btn-deal">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </button>
+                </a>
+            <td>
+                <a href="xacnhandon.php?id=<?php echo $row['IDKhachHang'] ?>">
+                    <button class="btn btn-check">
+                        <i class="fa-solid fa-clock"></i>
+                    </button>
+                </a>    
+            <td>
+                <a href="xulynhanhang.php?id=<?php echo $row['IDKhachHang'] ?>">
+                    <button class="btn btn-success">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                </a>
+            
+        </tr>
+
+     <?php }?>
+    </table>
     </body>
 </html>
 

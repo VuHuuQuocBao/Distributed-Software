@@ -19,7 +19,7 @@ require('Widget/scroll.php');
 
 <body>
     <div class="banner">
-        <h1>GIỚI THIỆU</h1>
+        <h1>GIỚI THIỆU về Cửa Hàng</h1>
         <div class="banner-page">
             <a href="TrangChu.php">Trang chủ /</a>
             <h3>GIỚI THIỆU</h3>
@@ -83,6 +83,10 @@ require('Widget/scroll.php');
             <div class="col d-f">
                 <i class="fa-solid fa-money-bill-1 icon-introduct"></i>
                 <div class="info">
+<<<<<<< HEAD:src/GioiThieu.php
+
+            
+=======
                     <h3>Thanh Toán An Toàn Và Tiện lợi</h3>
                     <p>Người mua có thể tham khảo các phương thức thanh toán sau đây và lựa chọn áp dụng phương thức phù hợp:<br>
                         Cách 1: Thanh toán trực tiếp (người mua nhận hàng tại địa chỉ người bán)<br>
@@ -96,6 +100,7 @@ require('Widget/scroll.php');
                     <p>Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng mang dấu ấn lịch sử của cửa hàng chúng tôi và đang không ngừng phát triển lớn mạnh<br>
                 </div>
             </div>
+>>>>>>> 20b50f949fe8d33b87fd975cedbb10b61fddb8f0:WebShop/GioiThieu.php
         </div>
     </section>
 
@@ -114,6 +119,19 @@ require('Widget/scroll.php');
         ScrollReveal().reveal('.info p',{delay: 400, origin: 'left'});
         ScrollReveal().reveal('.row i',{delay: 200, origin: 'top'});
 
+        if($brand != null)
+    {
+        $command = "SELECT * FROM `sanpham` WhERE brand = '".$brand."' ORDER BY giaSP DESC";
+    }
+    else
+    {
+        if($IDLoai != -1)
+	        $command = "SELECT * FROM `sanpham` WhERE IDLoai = '".$IDLoai."' ORDER BY giaSP DESC";
+	    else
+            $command = "SELECT * FROM `sanpham` ORDER BY giaSP DESC";
+    } 
+    
+    
     </script>
 </body>
 </html>
