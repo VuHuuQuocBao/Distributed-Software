@@ -65,10 +65,8 @@
         if (isset($_POST['gioiTinh'])) {
             $gioiTinh = $_POST['gioiTinh'];
         }
-        if (isset($_POST['SDT'])) {
-            $SDT = $_POST['SDT'];
-        }
-        if (isset($_POST['email'])) {
+
+        }        if (isset($_POST['email'])) {
             $email = $_POST['email'];
         }
         if (isset($_POST['diaChi'])) {
@@ -110,9 +108,6 @@ mysqli_close(connect());
                             <th><span>IDKH</span></th>
                             <th><span>Tên Khách Hàng</span></th>
                             <th><span>Tên Sản Phẩm</span></th>
-                            <th><span>Bình Luận</span></th>
-                            <th><span>Ngày Bình Luận</span></th>
-                            <th><span>Xóa</span></th>
                         </tr>
                     </thead>
                     <?php
