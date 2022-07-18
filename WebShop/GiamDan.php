@@ -38,8 +38,6 @@
         <meta charset="utf8"></meta>
         <title>Shop Áo</title>
         <link rel="stylesheet" href="css/SanPham.css">
-        <link rel="stylesheet" href="css/responsive.css">
-        <script src="https://unpkg.com/scrollreveal"></script>
 
     </head>
 
@@ -71,11 +69,6 @@
                             { ?>
                                 <span id="Sold_Out">Cháy hàng</span>
                       <?php }?>
-                          
-                            <a href="PHP/Xulychitietsanpham.php?page=danhsach&id=<?php echo $row['ID']; ?>&IDLoai=<?php echo $row['IDLoai']; ?>" id="buyProduct">
-                                <img type="image" id="ImgShirt" src="<?php echo $row['imageSP']?>">
-                            </a>
-
                             <p><?php echo $row['tenSP']?>
                             <div style="display:flex; width:100%; justify-content:center">
                                 <?php
@@ -107,7 +100,6 @@
                         
                         <p><?php echo $row['tenSP']?>
                         
-                        <div style="display:flex; width:100%; justify-content:center">
                                 <?php
                                     if($row['giaGiam'] > 0)
                                     {?>
@@ -126,8 +118,6 @@
             ScrollReveal({ 
                 reset: true, //reset animation
                 distance: '150px', //khoảng cách animation
-                duration: 500, //thời gian chạy
-                delay: 25 //delay
             });
             
             //set aniamtion cho thẻ
