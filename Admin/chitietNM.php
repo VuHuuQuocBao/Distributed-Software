@@ -56,9 +56,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/quanLy.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -92,10 +89,6 @@
                 <?php echo $row['IDKhachHang'] ?>
             <td>
                 <?php echo $row['sumSL'] ?>    
-            <td>
-                <?php echo $row['ThoiGianDH'] ?>
-            <td>
-                <?php echo $row['trangThai'] ?>
             <td>
                 <a href="quantri.php?page_layout=detail_DH&chitietDH.php&id=<?php echo $row['IDKhachHang']?>&ThoiGianDH=<?php echo $row['ThoiGianDH']?>">
                     <button class="btn btn-deal">
