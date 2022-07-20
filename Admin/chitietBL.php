@@ -85,6 +85,16 @@
         mysqli_query(connect(), $iskh);
         header("Location:quantri.php?page_layout=danhsachKH");
         mysqli_close(connect());
+
+        if(!headers_sent())
+        {
+            header("Location: quantri.php?page_layout=danhsachTheLoai");
+        }
+        else
+        {
+            echo '<script>window.location="quantri.php?page_layout=danhsachTheLoai"</script>';
+        }
+        mysqli_close(connect());
     }
 mysqli_close(connect());
 ?>
