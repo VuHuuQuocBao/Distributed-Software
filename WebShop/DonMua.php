@@ -156,46 +156,7 @@
                             echo "<a id='numberPage' href='DonMua.php?page={$EndPage}'>Cuối</a>";
                         }
                     ?>
-            </div>    
-            while($row = mysqli_fetch_array($result))
-                { ?>
-                    <div align="center" class="SubProduct">
-
-                    <?php
-                        $querySK = "SELECT * FROM sukien";
-                        $resultSK = mysqli_query(Connect(),$querySK);
-
-                    while($rowSK = mysqli_fetch_array($resultSK))
-                    {
-                        if($row['IDLoai'] == $rowSK['IDTL'])
-                        { ?>
-                            <span class="Discount">-<?php if(isset($rowSK['tienGiam']))  echo $rowSK['tienGiam']?>%</span>
-
-                    <?php }
-                    } ?>
-                        
-                        <?php
-                            if($row['soLuong'] == 0)
-                            { ?>
-                                <span id="Sold_Out">Cháy hàng</span>
-                      <?php }?>
-
-                        <a href="PHP/Xulychitietsanpham.php?page=danhsach&brand=<?php echo $row['brand']; ?>&id=<?php echo $row['ID']; ?>&IDLoai=<?php echo $row['IDLoai']; ?>" id="buyProduct">
-                            <img type="image" id="ImgShirt" src="<?php echo $row['imageSP']?>"></a>
-                                
-                        <p><?php echo $row['tenSP']?></p>
-                        <div style="display:flex; width:100%; justify-content:center">
-                                <?php
-                                    if($row['giaGiam'] > 0)
-                                    {?>
-                                        <p style="text-decoration:line-through; color:gray; font-weight:500; font-size: 15px; margin: auto 10px"><?php echo format_money($row['giaSP'],0,'','.')?></p>
-                                <?php }?>
-
-                                <p><?php echo format_money($row['giaSP'] - $row['giaGiam'],0,'','.')?>
-                        </div>                 
-                    </div>
-                <?php }?>
-        </div>       
+            </div>           
         </div> 
 </body>
 </html>

@@ -57,7 +57,7 @@
     <div id="wrapper">
         <div id="HeaderSearch" class="Header_Search">
             <div style="display: flex; color:black;">
-                <img class="Header_Logo" src="/Image/Menu/Logo.ico" alt=""><span style="margin:auto auto">THOITRANG</span>
+                <img class="Header_Logo" src="/Image/Menu/Logo.ico" alt=""><span style="margin:auto auto">WIBUGANGZ</span>
             </div>
 
             <div id="menu-search">
@@ -175,17 +175,17 @@
             <nav id="container" class="container">
                 <ul id="main-menu">
                     <li class="menu-item"><a href="TrangChu.php">Trang Chủ </a></li>
-                    <li class="menu-item"><a href="SanPham.php?page=Sản Phẩm&TheLoai=Tất Cả & IDLoai=-1">Sản Phẩm</a>
+                    <li class="menu-item"><a href="SanPham.php?page=Sản Phẩm&TheLoai=Tất Cả&IDLoai=-1">Sản Phẩm</a>
                         <ul class="sub-menu_Product">
                                 <li class="Title_SubMenu">ÁO
                                     <ul class="sub-menuItem">
-                                        <li><a href="SanPham.php?page=Quần Áo&TheLoai=Đồ Nam&IDLoai=14">Áo Nam</a></li>
-                                        <li><a href="SanPham.php?page=Quần Áo&TheLoai=Đồ Nữ&IDLoai=15">Áo Nữ</a></li>
-                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Áo&IDLoai=1">Áo Sơ Mi</a></li>
-                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Quần&IDLoai=2">Áo Ca-ro</a></li>
-                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Ba Lô&IDLoai=4">Áo Ngắn tay</a></li>
-                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Giày&IDLoai=3">Áo Dài tay</a></li>
-                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Mũ&IDLoai=5">Áo Khoác</a></li>
+                                        <li><a href="SanPham.php?page=Quần Áo&TheLoai=Đồ Nam&IDLoai=14">Áo nam</a></li>
+                                        <li><a href="SanPham.php?page=Quần Áo&TheLoai=Đồ Nữ&IDLoai=15">Áo nữ</a></li>
+                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Áo&IDLoai=1">Áo sơ mi</a></li>
+                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Quần&IDLoai=2">Áo ca rô</a></li>
+                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Ba Lô&IDLoai=4">Áo tay ngắn</a></li>
+                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Giày&IDLoai=3">Áo tay dài</a></li>
+                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Mũ&IDLoai=5">Áo khoác</a></li>
                                     </ul>
                                
                                 </li>
@@ -204,11 +204,11 @@
 
                                 <li class="Title_SubMenu"> GIÀY
                                     <ul class="sub-menuItem">
+                                        <li><a href="SanPham.php?page=Quần Áo&TheLoai=Đồ Nam&IDLoai=14">Giày Adidas</a></li>
                                         <li><a href="SanPham.php?page=Quần Áo&TheLoai=Đồ Nữ&IDLoai=15">Giày Nike</a></li>
                                         <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Áo&IDLoai=1">Giày Converse</a></li>
                                         <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Quần&IDLoai=2">Giày Balenciaga</a></li>
-                                        <li><a href="SanPham.php?page=Quần Áo&TheLoai=Đồ Nam&IDLoai=14">Giày Adidas</a></li>
-                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Ba Lô&IDLoai=4">Giày New Balance</a></li>
+                                        <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Ba Lô&IDLoai=4">Giày new Balance</a></li>
                                         <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Giày&IDLoai=3">Giày Puma</a></li>
                                         <li><a href="SanPham.php?page=Sản Phẩm&TheLoai=Mũ&IDLoai=5">Giày Vans</a></li>
                                     </ul>
