@@ -45,6 +45,58 @@
         }
     }
 
+<<<<<<< HEAD
+=======
+    $ID = $IDSP = $IDSize = $hoTen = $soLuongSP = $ngaySinh = $SDT = $email = $diaChi = $avatar = '';
+    if (!empty($_POST)) {
+        if (isset($_POST['ID'])) {
+            $ID = $_POST['ID'];
+        }
+        if (isset($_POST['tenDangNhap'])) {
+            $tenDangNhap = $_POST['tenDangNhap'];
+        }
+        if (isset($_POST['matKhau'])) {
+            $matKhau = $_POST['matKhau'];
+        }
+        if (isset($_POST['hoTen'])) {
+            $hoTen = $_POST['hoTen'];
+        }
+        if (isset($_POST['avatar'])) {
+            $avatar = $_POST['avatar'];
+        }
+        if (isset($_POST['gioiTinh'])) {
+            $gioiTinh = $_POST['gioiTinh'];
+        }
+
+        }        if (isset($_POST['email'])) {
+            $email = $_POST['email'];
+        }
+        if (isset($_POST['diaChi'])) {
+            $diaChi = $_POST['diaChi'];
+        }
+
+        // chọn bảng mã cho kết nối
+        mysqli_query(connect(), "set names 'utf8'");
+        // thực hiện lệnh truy vấn
+        $istk = 'INSERT INTO taikhoan(ID, tenDangNhap,matKhau) VALUES ("' . $ID . '","' . $tenDangNhap . '","' . $matKhau . '")';
+        $result1 = mysqli_query(connect(), $istk);
+        $iskh = 'INSERT INTO khachhang(ID,tenDangNhap, hoTen, gioiTinh, ngaySinh, SDT, email, diaChi, avatar)
+        VALUES ("' . $ID . '","' . $tenDangNhap . '","' . $hoTen . '","' . $gioiTinh . '","' . $ngaySinh . '","' . $SDT . '","' . $email . '","' . $diaChi . '","' . $file . '")';
+        mysqli_query(connect(), $iskh);
+        header("Location:quantri.php?page_layout=danhsachKH");
+        mysqli_close(connect());
+
+        if(!headers_sent())
+        {
+            header("Location: quantri.php?page_layout=danhsachTheLoai");
+        }
+        else
+        {
+            echo '<script>window.location="quantri.php?page_layout=danhsachTheLoai"</script>';
+        }
+        mysqli_close(connect());
+    }
+>>>>>>> 5f9b5d1683974dc54b487ff71843b32bf7b59435
 mysqli_close(connect());
 ?>
 <?php if(isset($_SESSION["admin"])) { ?>
@@ -71,9 +123,6 @@ mysqli_close(connect());
                             <th><span>IDKH</span></th>
                             <th><span>Tên Khách Hàng</span></th>
                             <th><span>Tên Sản Phẩm</span></th>
-                            <th><span>Bình Luận</span></th>
-                            <th><span>Ngày Bình Luận</span></th>
-                            <th><span>Xóa</span></th>
                         </tr>
                     </thead>
                     <?php

@@ -30,10 +30,6 @@ $resultRow= mysqli_query(connect(),$querySoDong);
         {
         $listPage.='<a class="active" href=quantri.php?page_layout=detail_LS&chitietLS.php&id='.$ID.'&page='.$i.'>'.$i.'</a>';
         }
-        else
-        {
-        $listPage.='<a href=quantri.php?page_layout=detail_LS&chitietLS.php&id='.$ID.'&page='.$i.'>'.$i.'</a>';
-        }
     }
   mysqli_close(connect());
 ?>
